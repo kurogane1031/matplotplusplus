@@ -5,6 +5,7 @@
 #ifndef MATPLOTPLUSPLUS_LINE_SPEC_H
 #define MATPLOTPLUSPLUS_LINE_SPEC_H
 
+#include <functional>
 #include <array>
 #include <matplot/util/colors.h>
 #include <matplot/util/concepts.h>

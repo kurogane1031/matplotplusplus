@@ -5,6 +5,8 @@
 #ifndef MATPLOTPLUSPLUS_AXES_H
 #define MATPLOTPLUSPLUS_AXES_H
 
+#include <array>
+#include <memory>
 #include <optional>
 
 #include <matplot/util/colors.h>
@@ -2204,9 +2206,9 @@ namespace matplot {
         surface_handle surf(const IterableIterables<T1> &X,
                             const IterableIterables<T2> &Y,
                             const IterableIterables<T3> &Z,
-                            const IterableIterables<T4> &C = {}, std::string
-                            line_spec = "") {
-            return IterableIterables(to_vector_2d(X),to_vector_2d(Y),to_vector_2d(Z),to_vector_2d(C),line_spec);
+                            const IterableIterables<T4> &C = {},
+                            const std::string& line_spec = "") {
+          return IterableIterables<T1>(to_vector_2d(X),to_vector_2d(Y),to_vector_2d(Z),to_vector_2d(C),line_spec);
         }
 
         template <class T1, class T2, class T3, class T4>

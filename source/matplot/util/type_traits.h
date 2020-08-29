@@ -5,6 +5,7 @@
 #ifndef MATPLOTPLUSPLUS_TYPE_TRAITS_H
 #define MATPLOTPLUSPLUS_TYPE_TRAITS_H
 
+#include <vector>
 #include <string>
 #include <type_traits>
 

@@ -5,6 +5,8 @@
 #ifndef MATPLOTPLUSPLUS_CHARTOBJECT_H
 #define MATPLOTPLUSPLUS_CHARTOBJECT_H
 
+#include <iomanip>
+#include <memory>
 #include <vector>
 
 namespace matplot {

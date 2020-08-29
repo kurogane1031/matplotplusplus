@@ -5,6 +5,8 @@
 #ifndef MATPLOTPLUSPLUS_LEGEND_H
 #define MATPLOTPLUSPLUS_LEGEND_H
 
+#include <memory>
+
 #include <vector>
 #include <string>
 #include <array>

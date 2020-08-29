@@ -5,24 +5,28 @@
 #ifndef MATPLOTPLUSPLUS_COMMON_H
 #define MATPLOTPLUSPLUS_COMMON_H
 
-#include <vector>
-#include <string>
-#include <sstream>
+#include <stdexcept>
+#include <algorithm>
 #include <complex>
+#include <functional>
 #include <map>
 #include <matplot/util/concepts.h>
+#include <sstream>
+#include <stdexcept>
+#include <string>
+#include <vector>
+#include <cassert>
 
 namespace matplot {
-    bool iequals(const std::string& str1, const std::string& str2);
-    bool is_true(const std::string& str);
-    bool is_false(const std::string& str);
-    std::string run_and_get_output(const std::string& command);
-    std::string escape(const std::string& label);
-
-    inline void ltrim(std::string &s) {
-        s.erase(s.begin(), std::find_if(s.begin(), s.end(), [](int ch) {
-            return !std::isspace(ch);
-        }));
+  bool iequals(const std::string &str1, const std::string &str2);
+  bool is_true(const std::string &str);
+  bool is_false(const std::string &str);
+  std::string run_and_get_output(const std::string &command);
+  std::string escape(const std::string &label);
+  
+  inline void ltrim(std::string &s) {
+    s.erase(s.begin(), std::find_if(s.begin(), s.end(),
+                                    [](int ch) { return !std::isspace(ch); }));
     }
 
     inline void rtrim(std::string &s) {

@@ -5,6 +5,7 @@
 #ifndef MATPLOTPLUSPLUS_HANDLE_TYPES_H
 #define MATPLOTPLUSPLUS_HANDLE_TYPES_H
 
+#include <memory>
 #include <array>
 
 namespace matplot {

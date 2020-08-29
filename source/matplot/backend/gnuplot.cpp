@@ -2,7 +2,7 @@
 // Created by Alan Freitas on 26/08/20.
 //
 
-#include <filesystem>
+#include <experimental/filesystem>
 #include <iostream>
 #include <regex>
 #include <thread>
@@ -64,7 +64,7 @@ namespace matplot::backend {
         }
 
         // look at the extension
-        namespace fs = std::filesystem;
+        namespace fs = std::experimental::filesystem;
         fs::path p{filename};
         std::string ext = p.extension();
 
@@ -110,7 +110,7 @@ namespace matplot::backend {
         }
 
         // Create file if it does not exist
-        namespace fs = std::filesystem;
+        namespace fs = std::experimental::filesystem;
         fs::path p{filename};
         if (!p.parent_path().empty() && !fs::exists(p.parent_path())) {
             fs::create_directory(p.parent_path());
@@ -220,7 +220,7 @@ namespace matplot::backend {
         if (!pipe_) {
             return;
         }
-        size_t pipe_capacity = (pipe_->_bf._base != nullptr) ? pipe_->_bf._size : pipe_capacity_worst_case;
+        size_t pipe_capacity = BUFSIZ;
         if (command.size() + bytes_in_pipe_ > pipe_capacity) {
             flush_commands();
             bytes_in_pipe_ = 0;

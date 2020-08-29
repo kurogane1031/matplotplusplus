@@ -4,7 +4,9 @@
 
 #ifndef MATPLOTPLUSPLUS_COLORS_H
 #define MATPLOTPLUSPLUS_COLORS_H
+#include <algorithm>
 
+#include <vector>
 #include <string>
 #include <array>
 

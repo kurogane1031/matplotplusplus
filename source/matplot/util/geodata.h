@@ -6,6 +6,8 @@
 #define MATPLOTPLUSPLUS_GEODATA_H
 
 #include <vector>
+#include <string>
+#include <numeric>
 
 namespace matplot {
     std::pair<std::vector<double>, std::vector<double>>& world_map_10m();

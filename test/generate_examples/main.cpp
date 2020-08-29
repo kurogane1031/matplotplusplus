@@ -1,5 +1,5 @@
 #include <iostream>
-#include <filesystem>
+#include <experimental/filesystem>
 #include <fstream>
 #include <map>
 #include <regex>
@@ -16,7 +16,7 @@ int main() {
     //     .svgs as we want and this executable will use this svg instead of
     //     running the example.
     using namespace std;
-    namespace fs = filesystem;
+    namespace fs = experimental::filesystem;
 
     // What each relative directory represents
     map<string, string> dir_map = {

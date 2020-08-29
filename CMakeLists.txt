@@ -2,7 +2,9 @@ cmake_minimum_required(VERSION 3.14)
 project(matplotplusplus)
 
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_FLAGS_RELEASE "-O3")
+SET(CMAKE_CXX_COMPILER "/usr/bin/clang++-9")
+set(CMAKE_CXX_FLAGS_RELEASE "-O3 -fpermissive -Wdynamic-exception-spec")
+SET(CMAKE_EXPORT_COMPILE_COMMANDS "ON")
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 include(cmake/CPM.cmake)
