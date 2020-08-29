@@ -81,10 +81,6 @@ if(FFTW_FOUND)
 endif()
 
 list(APPEND CMAKE_PREFIX_PATH "/home/zulfaqar/.program_files/openexr-2.5.2/install")
-find_package(PkgConfig REQUIRED) 
-if(PkgConfig_FOUND)
-    message("PkgConfig Found")
-endif()
 pkg_check_modules(OPENEXR OpenEXR>2.5.0)
 if(OPENEXR_FOUND)
     find_library(OPENEXRHALF_LIBRARY
@@ -92,7 +88,7 @@ if(OPENEXR_FOUND)
 	HINTS "/home/zulfaqar/.program_files/openexr-2.5.2/install/lib"
 	) 
     find_library(OPENEXR_LIBRARY
-	NAMES Half-2_5 IlmImf-2_5 Imath-2_5 Iex-2_5 IexMath-2_5 IlmThread-2_5
+	NAMES IlmImf-2_5 Imath-2_5 Iex-2_5 IexMath-2_5 IlmThread-2_5
 	HINTS "/home/zulfaqar/.program_files/openexr-2.5.2/install/lib"
 	) 
     message(${OPENEXRHALF_LIBRARY})
@@ -145,6 +141,7 @@ if(NOT WIN32)
     if(X11_FOUND)
         target_compile_definitions(cimg INTERFACE cimg_display=1)
         target_compile_definitions(cimg INTERFACE cimg_use_xshm cimg_use_xrandr)
+        target_link_libraries(cimg INTERFACE X11::Xrandr)
         target_link_libraries(cimg INTERFACE ${X11_LIBRARIES})
         target_include_directories(cimg INTERFACE ${X11_INCLUDE_DIRS})
     else()

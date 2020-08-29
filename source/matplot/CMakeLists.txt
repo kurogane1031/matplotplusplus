@@ -84,7 +84,7 @@ add_library(matplot
 )
 
 target_include_directories(matplot PUBLIC ${MATPLOT_ROOT_DIR}/source)
-target_link_libraries(matplot PUBLIC nodesoup cimg)
+target_link_libraries(matplot PUBLIC nodesoup cimg stdc++fs)
 
 if (BUILD_FOR_DOCUMENTATION_IMAGES)
     message("Building matplot for documentation images. wait() commands will be ignored. ~figure will save the files.")
